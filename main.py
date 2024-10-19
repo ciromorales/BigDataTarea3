@@ -7,8 +7,8 @@ from pyspark.sql import SparkSession, functions as F
 spark = SparkSession.builder.appName('Tarea3').getOrCreate()
 
 #Define la ruta del archivo CSV: Aquí se especifica la ruta del archivo CSV que se va a cargar.
-#file_path = 'hdfs://localhost:9000/Tarea3/rows.csv'
-file_path = 'LISTADO_COLEGIOS_BOGOTA_20241019.csv'
+file_path = 'hdfs://localhost:9000/Tarea3/rows.csv'
+
 
 # Carga el archivo CSV en un DataFrame
 df = spark.read.format('csv').option('header','true').option('inferSchema','true').load(file_path)
